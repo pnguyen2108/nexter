@@ -1,25 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #54483A;
+  font-weight: 300;
+  line-height: 1.6; }
+
+.sidebar {
+  background-color: #c69963;
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1; }
+
+.header {
+  background-color: #54483A;
+  grid-column: full-start / col-end 6; }
+
+.realtors {
+  background-color: #101d2c;
+  grid-column: col-start 7 / full-end; }
+
+.features {
+  background-color: #f9f7f6;
+  grid-column: center-start / center-end; }
+
+.story {
+  grid-column: full-start / full-end; }
+  .story__pictures {
+    grid-column: full-start / col-end 4;
+    background-color: #c69963; }
+  .story__content {
+    background-color: #f9f7f6;
+    grid-column: col-end 4 / full-end; }
+
+.home {
+  grid-column: center-start / center-end;
+  background-color: #101d2c; }
+
+.gallery {
+  background-color: #101d2c;
+  grid-column: full-start / full-end; }
+
+.footer {
+  background-color: #101d2c;
+  grid-column: full-start / full-end; }
+
 .container {
-  width: 1000px;
-  margin: 30px auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 200px;
-  grid-template-rows: 100px 200px 400px 100px;
-  grid-gap: 30px; }
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   .container > * {
-    background-color: #c54057;
-    font-size: 10px;
-    padding: 20px;
-    font-size: 30px;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    color: white; }
-  .container__item-1 {
-    grid-column: 1 / -1; }
-  .container__item-5 {
-    grid-row: 2 / span 2; }
-  .container__item-6 {
-    grid-row: 3/4;
-    grid-column: 1 / span 3; }
-  .container__item-7 {
-    grid-row: 4/ -1;
-    grid-column: 1 / -1; }
+    padding: 4rem;
+    font-size: 3rem; }

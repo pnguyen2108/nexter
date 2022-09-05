@@ -15,6 +15,17 @@ body {
   font-weight: 300;
   line-height: 1.6; }
 
+.heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400; }
+
+.heading-4 {
+  font-size: 1.9rem; }
+  .heading-4--light {
+    color: #f9f7f6; }
+  .heading-4--dark {
+    color: #54483A; }
+
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start/sidebar-end;
@@ -30,7 +41,29 @@ body {
 
 .features {
   background-color: #f9f7f6;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+  align-items: start; }
+
+.feature {
+  display: grid;
+  width: auto;
+  margin-bottom: 6rem;
+  transform: translateY(-1rem);
+  grid-template-rows: 4.5rem 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 0G;
+  grid-column-gap: 2rem; }
+  .feature__icon {
+    fill: #c69963;
+    width: 4.5rem;
+    height: 4.5rem; }
+  .feature__text {
+    font-size: 1.7rem;
+    grid-column: 2; }
 
 .story {
   grid-column: full-start / full-end; }

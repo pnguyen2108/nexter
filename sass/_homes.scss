@@ -1,4 +1,85 @@
+%home-text-type {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.homes {
+  grid-column: center-start / center-end;
+  display: grid;
+  gap: 7rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin: 15rem 0;
+  padding: 0 !important;
+}
+
 .home {
-    grid-column: center-start / center-end;
+  background-color: $color-grey-light-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3.5rem;
+
+  & > * {
+    svg {
+      fill: $color-primary;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    z-index: 1;
+  }
+
+  &__like {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-self: end;
+    fill: $color-primary;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 1rem;
+    margin: 1rem;
+    z-index: 2;
+  }
+
+  &__name {
     background-color: $color-secondary;
+    color: #fff;
+    text-align: center;
+    justify-self: center;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    width: 80%;
+    padding: 1.25rem;
+    font-size: 1.6rem;
+    align-self: end;
+    transform: translateY(50%);
+    z-index: 2;
+  }
+
+  &__location {
+    @extend %home-text-type;
+
+    margin-top: 2.5rem;
+  }
+
+  &__room {
+    @extend %home-text-type;
+
+    margin-top: 2.5rem;
+  }
+
+  &__area {
+    @extend %home-text-type;
+  }
+
+  &__price {
+    @extend %home-text-type;
+  }
 }

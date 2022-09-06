@@ -13,4 +13,8 @@
   &:hover {
     background-color: $color-primary-dark;
   }
+
+  &__home {
+    grid-column: 1 / -1;
+  }
 }

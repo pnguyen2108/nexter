@@ -4,11 +4,15 @@
 }
 
 .heading-1 {
+  @extend %heading;
+
+  font-size: 4.5rem;
+  color: $color-grey-light-1;
 }
 
 .heading-2 {
   @extend %heading;
-  
+
   font-size: 4rem;
 
   &--dark {
@@ -21,7 +25,7 @@
 
   font-size: 1.6rem;
   color: $color-primary;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .heading-4 {

@@ -7,6 +7,13 @@
   grid-template-rows: repeat(7, 5vw);
   gap: 1.5rem;
 
+  @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+    grid-column: 1/-1;
+    grid-row: 8/9;
+    padding: 0 !important;
+    margin: 3rem 0.5rem;
+  }
+
   &__item {
     img {
       width: 100%;

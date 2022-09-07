@@ -4,6 +4,11 @@
   display: grid;
   padding: 8rem !important;
 
+  @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+    grid-column: 1/-1;
+    grid-row: 9/10;
+  }
+
   .nav {
     display: grid;
     gap: 2rem;
@@ -11,6 +16,18 @@
     text-align: center;
     align-items: center;
     list-style: none;
+
+    @include responsive(mobile-landscape, tablet-portrait) {
+      gap: 1rem;
+    }
+
+    @include responsive(mobile-landscape) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(tablet-portrait, tablet-landscape) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     &__item {
       transition: all 0.2s;

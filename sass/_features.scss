@@ -6,6 +6,12 @@
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 60px;
   align-items: start;
+
+  @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+    grid-row: 4/5;
+    row-gap: 3rem;
+  }
 }
 
 .feature {

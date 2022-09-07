@@ -4,13 +4,18 @@
   &__pictures {
     grid-column: full-start / col-end 4;
     background-color: $color-primary;
-    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.5)),
-      url(../img/back.jpg);
+    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.5)), url(../img/back.jpg);
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     align-items: center;
+
+    @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+      grid-column: 1/-1;
+      grid-row: 5/6;
+      row-gap: 3rem;
+    }
   }
 
   &__content {
@@ -25,6 +30,15 @@
     // flex-direction: column;
     // justify-content: center;
     // align-items: flex-start;
+
+    @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+      grid-column: 1/-1;
+      grid-row: 6/7;
+    }
+
+    @include responsive(tablet-portrait) {
+      margin-bottom: 3rem;
+    }
   }
 
   &__text {
@@ -33,12 +47,20 @@
     margin-bottom: 4rem;
   }
 
+  &__pictures {
+    display: grid;
+  }
+
   &__img {
     &--1 {
       width: 100%;
       grid-row: 2 / span 4;
       grid-column: 2 / span 4;
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 1);
+
+      @include responsive(mobile-portrait) {
+        grid-row: 2 / span 6;
+      }
     }
 
     &--2 {
@@ -47,6 +69,16 @@
       grid-column: 4 / 7;
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
       z-index: 20;
+
+      @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+        grid-column: 4 / 6;
+      }
+
+      @include responsive(mobile-landscape, tablet-portrait) {
+        margin-left: 6rem;
+        grid-column: 4 / 6;
+        grid-row: 3 / span 2;
+      }
     }
   }
 }

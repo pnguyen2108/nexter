@@ -12,6 +12,12 @@
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin: 15rem 0;
   padding: 0 !important;
+
+  @include responsive(mobile-portrait, mobile-landscape, tablet-portrait) {
+    margin: 5rem 0;
+    grid-column: center-start/center-end;
+    grid-row: 7/8;
+  }
 }
 
 .home {

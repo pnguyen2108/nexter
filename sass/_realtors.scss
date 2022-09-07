@@ -7,6 +7,10 @@
   flex-direction: column;
   padding: 3rem !important;
 
+  @include responsive(mobile-portrait, mobile-landscape) {
+    grid-column: 1 / -1;
+  }
+
   &__text {
     color: $color-primary;
     font-size: 1.6rem;
@@ -17,6 +21,11 @@
   &__info {
     display: flex;
     flex-direction: column;
+
+    @include responsive(mobile-landscape) {
+      flex-direction: row;
+      gap: 5rem;
+    }
   }
 }
 
